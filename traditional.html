@@ -1,58 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Traditional — VasDhara Luxury Studio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traditional Architecture | VasDhara Luxury Studio</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="page-enter page-enter-active">
-  <header class="header">
-    <div class="brand"><img src="assets/logo.png" alt="logo"><h1>VasDhara Design Studio</h1></div>
-    <nav class="nav"><a href="index.html">Home</a><a href="modern.html">Modern</a><a href="traditional.html">Traditional</a><a href="contact.html" class="cta-small">Contact</a></nav>
+<body>
+  <header class="navbar">
+    <img src="assets/logo.png" class="logo" alt="Logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="modern.html">Modern</a>
+      <a href="traditional.html" class="active">Traditional</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <main style="padding-top:72px">
-    <section class="hero" style="height:50vh">
-      <div class="bg" style="background-image:url('assets/trad-hero.jpg');filter:brightness(.6)"></div>
-      <div class="overlay" style="padding:40px">
-        <h2>Traditional Collection</h2>
-        <p class="lead">Heritage aesthetics reimagined for contemporary living.</p>
-      </div>
-    </section>
+  <section class="hero" style="background-image: url('assets/trad-hero.jpg');">
+    <div class="overlay">
+      <h1>Traditional Architecture</h1>
+      <p>Classic design enriched with cultural roots and fine detailing.</p>
+    </div>
+  </section>
 
-    <section class="section">
-      <h3>Selected Traditional Projects</h3>
-      <div class="grid">
-        <div class="gallery-card"><img src="assets/trad1.jpg" alt=""><div class="meta"><h5>Courtyard House</h5><p>Crafted timber and open courtyards.</p></div></div>
-        <div class="gallery-card"><img src="assets/trad2.jpg" alt=""><div class="meta"><h5>Heritage Renovation</h5><p>Careful restoration, modern services.</p></div></div>
-        <div class="gallery-card"><img src="assets/trad3.jpg" alt=""><div class="meta"><h5>Temple-Inspired Lobby</h5><p>Carved details, warm palette.</p></div></div>
-        <div class="gallery-card"><img src="assets/trad4.jpg" alt=""><div class="meta"><h5>Vernacular Villa</h5><p>Local materials, passive comfort.</p></div></div>
-      </div>
-    </section>
+  <section class="gallery-grid">
+    <img src="assets/trad1.jpg" alt="Traditional 1">
+    <img src="assets/trad2.jpg" alt="Traditional 2">
+    <img src="assets/trad3.jpg" alt="Traditional 3">
+    <img src="assets/trad4.jpg" alt="Traditional 4">
+  </section>
 
-    <section class="section">
-      <h3>Craft & Conservation</h3>
-      <p style="color:var(--muted)">We collaborate with local artisans and conservation specialists to ensure traditional detailing and material authenticity while integrating modern systems discreetly.</p>
-    </section>
-
-    <footer class="site-footer">© <span id="year"></span> VasDhara Design Studio — Traditional</footer>
-  </main>
-
-  <script>
-    window.addEventListener('scroll',()=>document.querySelector('.header').classList.toggle('scrolled',window.scrollY>30));
-    document.querySelectorAll('a').forEach(a=>{
-      const href=a.getAttribute('href');
-      if(href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:')){
-        a.addEventListener('click', e=>{
-          if(location.pathname.endsWith(href)) return;
-          e.preventDefault();
-          document.body.classList.add('page-exit-active');
-          setTimeout(()=> window.location = href,380);
-        });
-      }
-    });
-    document.getElementById('year').textContent=new Date().getFullYear();
-  </script>
+  <footer>
+    <p>© 2025 VasDhara Luxury Studio</p>
+  </footer>
 </body>
 </html>

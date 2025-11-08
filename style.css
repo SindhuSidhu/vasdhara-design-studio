@@ -1,79 +1,14 @@
-/* ========== GLOBAL STYLES ========== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
+/* BODY */
 body {
   font-family: "Poppins", sans-serif;
   background-color: #0d0d0d;
   color: #f5f5f5;
   line-height: 1.6;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-/* ========== COLORS & UTILITIES ========== */
-:root {
-  --gold: linear-gradient(90deg, #bfa46f, #e3ca8e);
-  --dark: #0d0d0d;
-  --gray: #1c1c1c;
-  --text-light: #f0f0f0;
-}
-
-/* ========== NAVBAR ========== */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 18px 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background 0.5s ease, box-shadow 0.5s ease;
-  z-index: 1000;
-}
-
-.navbar.transparent {
-  background: transparent;
-}
-
-.navbar.solid {
-  background: rgba(0, 0, 0, 0.85);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-}
-
-.logo {
-  height: 50px;
-}
-
-.navbar nav a {
-  color: #f5f5f5;
-  margin-left: 40px;
-  text-decoration: none;
-  font-weight: 500;
-  position: relative;
-  transition: color 0.3s;
-}
-
-.navbar nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0%;
-  height: 2px;
-  background: #e3ca8e;
-  transition: width 0.3s ease;
-}
-
-.navbar nav a:hover::after,
-.navbar nav a.active::after {
-  width: 100%;
-}
-
-/* ========== HERO SECTION ========== */
+/* HERO SECTION FIX: make text visible */
 .hero {
   height: 100vh;
   background-size: cover;
@@ -81,269 +16,61 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   text-align: center;
+  position: relative;
+  color: #f5f5f5;
 }
 
+/* Add a semi-transparent overlay */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.5); /* dark overlay for contrast */
+  z-index: 1;
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 900px;
   padding: 20px;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  background: var(--gold);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 15px;
+/* NAVBAR */
+.navbar.transparent {
+  background: rgba(0,0,0,0.0);
+}
+.navbar.solid {
+  background: rgba(0,0,0,0.85);
 }
 
-.hero p {
-  font-size: 1.2rem;
-  color: #ddd;
-  margin-bottom: 30px;
-}
-
-/* ========== BUTTONS ========== */
-.primary-btn {
-  display: inline-block;
-  background: var(--gold);
-  color: #000;
-  padding: 12px 28px;
-  border-radius: 30px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  margin: 6px;
-}
-
-.primary-btn:hover {
-  filter: brightness(1.2);
-  transform: translateY(-2px);
-}
-
-/* ========== SECTIONS ========== */
-.section {
-  padding: 100px 10%;
-  text-align: center;
-  background-color: #0d0d0d;
-}
-
-.section h3 {
-  font-size: 2rem;
-  margin-bottom: 50px;
-  background: var(--gold);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* ========== SERVICES ========== */
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-.service-card {
-  background: #1a1a1a;
-  padding: 30px;
-  border-radius: 15px;
-  transition: transform 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-10px);
-}
-
-/* ========== DESIGN CHOICE ========== */
-.design-choice {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-}
-
-.choice-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  cursor: pointer;
-}
-
-.choice-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.choice-card:hover img {
-  transform: scale(1.1);
-}
-
-.choice-card .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.choice-card:hover .overlay {
-  opacity: 1;
-}
-
-/* ========== PROJECT GRID ========== */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-}
-
-.project-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  background: #1a1a1a;
-  transition: transform 0.4s ease;
-}
-
-.project-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.project-card:hover {
-  transform: scale(1.03);
-}
-
-.project-info {
-  padding: 15px;
-  text-align: left;
-}
-
-/* ========== CONTACT FORM ========== */
-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 600px;
-  margin: 0 auto;
-  gap: 15px;
-}
-
-form input,
-form textarea {
-  padding: 12px 18px;
-  border-radius: 8px;
-  border: none;
-  background: #1f1f1f;
-  color: #f5f5f5;
-  font-size: 1rem;
-}
-
-form button {
-  background: var(--gold);
-  color: #000;
-  font-weight: 600;
-  padding: 12px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-form button:hover {
-  filter: brightness(1.15);
-}
-
-/* ========== FOOTER ========== */
-footer {
-  text-align: center;
-  padding: 40px 10px;
-  background: #111;
-  color: #aaa;
-  font-size: 0.9rem;
-}
-
-/* ========== WHATSAPP FLOAT BUTTON (LUXURY STYLE) ========== */
-.whatsapp-float {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  width: 58px;
-  height: 58px;
-  background: rgba(239, 239, 239, 0.15);
-  border: 1px solid rgba(227, 202, 142, 0.4);
-  border-radius: 50%;
-  backdrop-filter: blur(8px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
-  z-index: 999;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.1);
-  background: rgba(227, 202, 142, 0.2);
-  border-color: rgba(227, 202, 142, 0.8);
-}
-
-/* WhatsApp SVG Icon */
+/* WhatsApp Button Fix: always visible on dark background */
 .whatsapp-float svg {
-  width: 28px;
-  height: 28px;
-  fill: #25d366;
-  transition: fill 0.3s ease;
+  fill: #25d366; /* bright green */
 }
 
-.whatsapp-float:hover svg {
-  fill: #1ebe5a;
-}
-
-
-/* ========== FADE-IN ANIMATIONS ========== */
+/* FADE-IN: make it visible by default for testing */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
+  transition: all 1s ease-out;
 }
 
-.fade-in.visible {
+/* when visible */
+.fade-in.appear {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ========== RESPONSIVE ========== */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    padding: 15px;
-  }
+/* FOOTER: ensure contrast */
+footer {
+  background: #111;
+  color: #f5f5f5;
+}
 
-  .navbar nav a {
-    margin: 10px;
-  }
-
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .section {
-    padding: 80px 6%;
-  }
+/* BUTTONS */
+.primary-btn {
+  background: linear-gradient(90deg, #bfa46f, #e3ca8e);
+  color: #000;
 }

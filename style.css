@@ -1,140 +1,309 @@
-html {
+/* ========== GLOBAL STYLES ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  background-color: #0f0f0f;
-  color: #fff;
+  font-family: "Poppins", sans-serif;
+  background-color: #0d0d0d;
+  color: #f5f5f5;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
+/* ========== COLORS & UTILITIES ========== */
+:root {
+  --gold: linear-gradient(90deg, #bfa46f, #e3ca8e);
+  --dark: #0d0d0d;
+  --gray: #1c1c1c;
+  --text-light: #f0f0f0;
+}
+
+/* ========== NAVBAR ========== */
 .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 60px;
-  background: rgba(0,0,0,0.8);
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(6px);
+  transition: background 0.5s ease, box-shadow 0.5s ease;
+  z-index: 1000;
+}
+
+.navbar.transparent {
+  background: transparent;
+}
+
+.navbar.solid {
+  background: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .logo {
   height: 50px;
 }
 
-nav a {
-  color: #ccc;
-  margin: 0 15px;
+.navbar nav a {
+  color: #f5f5f5;
+  margin-left: 40px;
   text-decoration: none;
   font-weight: 500;
   position: relative;
+  transition: color 0.3s;
 }
 
-nav a.active, nav a:hover {
-  color: #d4af37;
+.navbar nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #e3ca8e;
+  transition: width 0.3s ease;
 }
 
+.navbar nav a:hover::after,
+.navbar nav a.active::after {
+  width: 100%;
+}
+
+/* ========== HERO SECTION ========== */
 .hero {
-  height: 90vh;
+  height: 100vh;
   background-size: cover;
   background-position: center;
   display: flex;
-  align-items: center;
   justify-content: center;
-  text-align: center;
+  align-items: center;
   position: relative;
+  text-align: center;
 }
 
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.45);
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
-  max-width: 800px;
+  z-index: 1;
+  max-width: 900px;
+  padding: 20px;
 }
 
 .hero h1 {
-  font-size: 52px;
-  color: #fff;
+  font-size: 3rem;
+  background: var(--gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
 }
 
 .hero p {
+  font-size: 1.2rem;
   color: #ddd;
-  font-size: 18px;
+  margin-bottom: 30px;
 }
 
-.section {
-  padding: 80px 60px;
-  text-align: center;
-}
-
+/* ========== BUTTONS ========== */
 .primary-btn {
-  background: linear-gradient(90deg, #d4af37, #c69c2a);
-  color: #fff;
-  padding: 12px 22px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
   display: inline-block;
+  background: var(--gold);
+  color: #000;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
   margin: 6px;
-  transition: 0.3s;
 }
 
 .primary-btn:hover {
-  transform: scale(1.05);
+  filter: brightness(1.2);
+  transform: translateY(-2px);
 }
 
-.project-grid {
+/* ========== SECTIONS ========== */
+.section {
+  padding: 100px 10%;
+  text-align: center;
+  background-color: #0d0d0d;
+}
+
+.section h3 {
+  font-size: 2rem;
+  margin-bottom: 50px;
+  background: var(--gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ========== SERVICES ========== */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+/* ========== DESIGN CHOICE ========== */
+.design-choice {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.choice-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.choice-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.choice-card:hover img {
+  transform: scale(1.1);
+}
+
+.choice-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.choice-card:hover .overlay {
+  opacity: 1;
+}
+
+/* ========== PROJECT GRID ========== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
-  margin-top: 40px;
 }
 
 .project-card {
   position: relative;
   overflow: hidden;
   border-radius: 16px;
+  background: #1a1a1a;
+  transition: transform 0.4s ease;
 }
 
 .project-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
 }
 
-.project-card:hover img {
-  transform: scale(1.05);
+.project-card:hover {
+  transform: scale(1.03);
 }
 
 .project-info {
-  background: rgba(0,0,0,0.6);
-  padding: 20px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  padding: 15px;
+  text-align: left;
 }
 
+/* ========== CONTACT FORM ========== */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  gap: 15px;
+}
+
+form input,
+form textarea {
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: none;
+  background: #1f1f1f;
+  color: #f5f5f5;
+  font-size: 1rem;
+}
+
+form button {
+  background: var(--gold);
+  color: #000;
+  font-weight: 600;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  filter: brightness(1.15);
+}
+
+/* ========== FOOTER ========== */
 footer {
-  background: #111;
   text-align: center;
-  padding: 30px;
+  padding: 40px 10px;
+  background: #111;
   color: #aaa;
+  font-size: 0.9rem;
 }
 
-/* Fade-in effect */
+/* ========== WHATSAPP FLOAT BUTTON ========== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: var(--gold);
+  color: #000;
+  font-size: 1.6rem;
+  border-radius: 50%;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+  z-index: 999;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* ========== FADE-IN ANIMATIONS ========== */
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease, transform 1s ease;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .fade-in.visible {
@@ -142,23 +311,22 @@ footer {
   transform: translateY(0);
 }
 
-/* WhatsApp Floating Button */
-.whatsapp-float {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background: #25d366;
-  color: white;
-  font-size: 28px;
-  padding: 14px;
-  border-radius: 50%;
-  text-align: center;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-  text-decoration: none;
-  z-index: 100;
-  transition: transform 0.3s;
-}
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 15px;
+  }
 
-.whatsapp-float:hover {
-  transform: scale(1.1);
+  .navbar nav a {
+    margin: 10px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .section {
+    padding: 80px 6%;
+  }
 }

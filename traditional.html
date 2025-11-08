@@ -9,26 +9,58 @@
 <body>
 
 <header>
-  <h1>VasDhara Design Studio</h1>
+  <div class="logo">
+    <img src="logo.png" alt="VasDhara Logo">
+    <h1>VasDhara Design Studio</h1>
+  </div>
   <nav>
     <a href="index.html">Home</a>
     <a href="modern.html">Modern</a>
     <a href="traditional.html">Traditional</a>
+    <a href="index.html#contact">Contact</a>
   </nav>
 </header>
 
+<section class="hero" style="background: linear-gradient(rgba(15,23,42,0.6),rgba(15,23,42,0.6)), url('https://images.unsplash.com/photo-1586105251261-72a756497a12?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;">
+  <h2>Tradition Meets Timelessness</h2>
+  <p>Crafting spaces inspired by heritage, culture, and warmth.</p>
+</section>
+
 <section class="section">
-  <h3>Traditional Architecture Portfolio</h3>
+  <h3>Traditional Projects</h3>
   <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1586105251261-72a756497a12?auto=format&fit=crop&w=900&q=80" alt="">
-    <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=900&q=80" alt="">
-    <img src="https://images.unsplash.com/photo-1542317854-f9596b0894e0?auto=format&fit=crop&w=900&q=80" alt="">
+    <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80" alt="Classic Courtyard">
+    <img src="https://images.unsplash.com/photo-1542317854-f9596b0894e0?auto=format&fit=crop&w=1200&q=80" alt="Heritage Home">
+    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=1200&q=80" alt="Temple-Inspired Interior">
+    <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=1200&q=80" alt="Wood Craft Detailing">
+    <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=1200&q=80" alt="Traditional Villa">
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h3>Contact Us</h3>
+  <form action="https://formspree.io/f/yourFormID" method="POST" style="max-width:600px;margin:0 auto;display:grid;gap:12px;">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="_replyto" placeholder="Email Address" required>
+    <textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
+    <button type="submit" class="btn">Send Message</button>
+  </form>
+  <div class="contact-info" style="margin-top:20px;">
+    <p><strong>Email:</strong> vasdharadesignstudio@gmail.com</p>
+    <p><strong>Phone:</strong> +91 9876543210</p>
+    <p><strong>Address:</strong> East Street, Coimbatore</p>
   </div>
 </section>
 
 <footer>
   © 2025 VasDhara Design Studio — Traditional Division
 </footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
+  });
+</script>
 
 </body>
 </html>

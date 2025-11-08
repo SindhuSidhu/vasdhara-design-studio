@@ -278,26 +278,43 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ========== WHATSAPP FLOAT BUTTON ========== */
+/* ========== WHATSAPP FLOAT BUTTON (LUXURY STYLE) ========== */
 .whatsapp-float {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background: var(--gold);
-  color: #000;
-  font-size: 1.6rem;
+  bottom: 28px;
+  right: 28px;
+  width: 58px;
+  height: 58px;
+  background: rgba(239, 239, 239, 0.15);
+  border: 1px solid rgba(227, 202, 142, 0.4);
   border-radius: 50%;
-  padding: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  text-decoration: none;
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
   z-index: 999;
-  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .whatsapp-float:hover {
   transform: scale(1.1);
-  filter: brightness(1.2);
+  background: rgba(227, 202, 142, 0.2);
+  border-color: rgba(227, 202, 142, 0.8);
 }
+
+/* WhatsApp SVG Icon */
+.whatsapp-float svg {
+  width: 28px;
+  height: 28px;
+  fill: #25d366;
+  transition: fill 0.3s ease;
+}
+
+.whatsapp-float:hover svg {
+  fill: #1ebe5a;
+}
+
 
 /* ========== FADE-IN ANIMATIONS ========== */
 .fade-in {

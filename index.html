@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VasDhara Design Studio | Excellence in Architecture & Interiors</title>
+  <title>VasDhara Design Studio | Enterprise Architecture & Interiors</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <h1>VasDhara Design Studio</h1>
+  <div class="logo">
+    <img src="logo.png" alt="VasDhara Logo">
+    <h1>VasDhara Design Studio</h1>
+  </div>
   <nav>
     <a href="index.html">Home</a>
     <a href="modern.html">Modern</a>
@@ -19,9 +22,9 @@
 </header>
 
 <section class="hero">
-  <h2>Design Beyond Dimensions</h2>
-  <p>Transforming ideas into spaces that inspire life.</p>
-  <div style="margin-top:20px;">
+  <h2>Innovating Spaces, Inspiring Lives</h2>
+  <p>Architecture. Interiors. Construction — Crafted for tomorrow.</p>
+  <div>
     <a href="modern.html" class="btn">Explore Modern</a>
     <a href="traditional.html" class="btn">Explore Traditional</a>
   </div>
@@ -29,7 +32,7 @@
 
 <section class="section">
   <h3>Our Expertise</h3>
-  <p>At VasDhara Design Studio, we specialize in architecture, interiors, and turnkey construction projects that blend aesthetic precision with cultural identity. Our team ensures your vision is realized with design intelligence and sustainability.</p>
+  <p>We blend modern innovation with timeless tradition. From corporate offices to heritage homes, VasDhara Design Studio delivers spaces that resonate with functionality, sustainability, and beauty.</p>
 </section>
 
 <section id="contact" class="contact">
@@ -44,6 +47,12 @@
 <footer>
   © 2025 VasDhara Design Studio — Architecture | Interiors | Construction
 </footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
+  });
+</script>
 
 </body>
 </html>

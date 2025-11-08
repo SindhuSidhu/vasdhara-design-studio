@@ -9,26 +9,58 @@
 <body>
 
 <header>
-  <h1>VasDhara Design Studio</h1>
+  <div class="logo">
+    <img src="logo.png" alt="VasDhara Logo">
+    <h1>VasDhara Design Studio</h1>
+  </div>
   <nav>
     <a href="index.html">Home</a>
     <a href="modern.html">Modern</a>
     <a href="traditional.html">Traditional</a>
+    <a href="index.html#contact">Contact</a>
   </nav>
 </header>
 
+<section class="hero" style="background: linear-gradient(rgba(15,23,42,0.6),rgba(15,23,42,0.6)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;">
+  <h2>Modern Living, Reimagined</h2>
+  <p>Minimalist. Functional. Sustainable. Modern architecture for the new era.</p>
+</section>
+
 <section class="section">
-  <h3>Modern Architecture Portfolio</h3>
+  <h3>Modern Projects</h3>
   <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="">
-    <img src="https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=900&q=80" alt="">
-    <img src="https://images.unsplash.com/photo-1618221424146-3c86b1a8f7fe?auto=format&fit=crop&w=900&q=80" alt="">
+    <img src="https://images.unsplash.com/photo-1618221424146-3c86b1a8f7fe?auto=format&fit=crop&w=1200&q=80" alt="Modern Interior">
+    <img src="https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=1200&q=80" alt="Contemporary Home">
+    <img src="https://images.unsplash.com/photo-1600585154154-1e0a2c56b1f2?auto=format&fit=crop&w=1200&q=80" alt="Modern Office">
+    <img src="https://images.unsplash.com/photo-1556911073-52527ac437a0?auto=format&fit=crop&w=1200&q=80" alt="Open Space">
+    <img src="https://images.unsplash.com/photo-1556912998-c57cc6b63cd7?auto=format&fit=crop&w=1200&q=80" alt="Luxury Flat">
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h3>Contact Us</h3>
+  <form action="https://formspree.io/f/yourFormID" method="POST" style="max-width:600px;margin:0 auto;display:grid;gap:12px;">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="_replyto" placeholder="Email Address" required>
+    <textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
+    <button type="submit" class="btn">Send Message</button>
+  </form>
+  <div class="contact-info" style="margin-top:20px;">
+    <p><strong>Email:</strong> vasdharadesignstudio@gmail.com</p>
+    <p><strong>Phone:</strong> +91 9876543210</p>
+    <p><strong>Address:</strong> East Street, Coimbatore</p>
   </div>
 </section>
 
 <footer>
   © 2025 VasDhara Design Studio — Modern Division
 </footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
+  });
+</script>
 
 </body>
 </html>

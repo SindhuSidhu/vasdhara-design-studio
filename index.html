@@ -1,73 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VasDhara Design Studio | Enterprise Architecture & Interiors</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>VasDhara Design Studio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <div class="logo">
+      <img src="assets/logo.png" alt="Logo">
+      <h1>VasDhara Design Studio</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="modern.html">Modern</a>
+      <a href="traditional.html">Traditional</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<header>
-  <div class="logo">
-    <img src="logo.png" alt="VasDhara Logo">
-    <h1>VasDhara Design Studio</h1>
-  </div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="modern.html">Modern</a>
-    <a href="traditional.html">Traditional</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <section class="hero" style="background-image:url('assets/modern1.jpg')">
+    <div class="hero-overlay">
+      <h2>Design that <span class="highlight">Flows with Life</span></h2>
+      <p>Architectural & Interior Excellence for Modern and Traditional Spaces.</p>
+    </div>
+  </section>
 
-<section class="hero">
-  <h2>Innovating Spaces, Inspiring Lives</h2>
-  <p>Architecture. Interiors. Construction — Crafted for tomorrow.</p>
-  <div>
-    <a href="modern.html" class="btn">Explore Modern</a>
-    <a href="traditional.html" class="btn">Explore Traditional</a>
-  </div>
-</section>
+  <section class="section">
+    <h3>Choose Your Design Style</h3>
+    <div class="design-choice">
+      <div class="choice-card">
+        <img src="assets/modern2.jpg" alt="Modern Design">
+        <h4>Modern Design</h4>
+        <p>Contemporary layouts, minimal forms, and futuristic materials for a sleek lifestyle.</p>
+        <a href="modern.html" class="btn">Explore Modern</a>
+      </div>
 
-<section class="section">
-  <h3>Our Expertise</h3>
-  <p>We blend modern innovation with timeless tradition. From corporate offices to heritage homes, VasDhara Design Studio delivers spaces that resonate with functionality, sustainability, and beauty.</p>
-</section>
+      <div class="choice-card">
+        <img src="assets/traditional1.jpg" alt="Traditional Design">
+        <h4>Traditional Design</h4>
+        <p>Rooted in cultural aesthetics, detailed craftsmanship, and timeless architecture.</p>
+        <a href="traditional.html" class="btn">Explore Traditional</a>
+      </div>
+    </div>
+  </section>
 
-<section id="contact" class="contact">
-  <h3>Contact Us</h3>
-  <div class="contact-info">
-    <p><strong>Email:</strong> vasdharadesignstudio@gmail.com</p>
-    <p><strong>Phone:</strong> +91 9876543210</p>
-    <p><strong>Address:</strong> East Street, Coimbatore</p>
-  </div>
-</section>
+  <section class="contact" id="contact">
+    <h3>Contact Us</h3>
+    <div class="contact-info">
+      <p><strong>Address:</strong> East Street, Coimbatore</p>
+      <p><strong>Email:</strong> vasdharadesignstudio@gmail.com</p>
+      <p><strong>Phone:</strong> +91 9876543210</p>
+    </div>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Project Details" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
-<footer>
-  © 2025 VasDhara Design Studio — Architecture | Interiors | Construction
-</footer>
+  <footer>© <span id="year"></span> VasDhara Design Studio. All rights reserved.</footer>
 
-<script>
-  window.addEventListener('scroll', () => {
-    document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
-  });
-</script>
-<script>
-  // Smooth fade-out navigation
-  document.querySelectorAll("a").forEach(link => {
-    if (link.getAttribute("href") && !link.getAttribute("href").startsWith("#")) {
-      link.addEventListener("click", e => {
-        e.preventDefault();
-        document.body.classList.add("fade-out");
-        setTimeout(() => {
-          window.location = link.href;
-        }, 400);
-      });
-    }
-  });
-</script>
-
-
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

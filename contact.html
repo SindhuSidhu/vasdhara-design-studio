@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Contact — VasDhara Luxury Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-enter page-enter-active">
+  <header class="header">
+    <div class="brand"><img src="assets/logo.png" alt="logo"><h1>VasDhara Design Studio</h1></div>
+    <nav class="nav"><a href="index.html">Home</a><a href="modern.html">Modern</a><a href="traditional.html">Traditional</a><a href="contact.html" class="cta-small">Contact</a></nav>
+  </header>
+
+  <main style="padding-top:72px">
+    <section class="section">
+      <h3>Contact & Enquiry</h3>
+      <div class="contact-panel" style="max-width:var(--maxw);margin:0 auto;">
+        <div class="contact-left">
+          <p class="contact-info"><strong>Email:</strong> vasdharadesignstudio@gmail.com</p>
+          <p class="contact-info"><strong>Phone:</strong> +91 9876543210</p>
+          <p class="contact-info"><strong>Address:</strong> East Street, Coimbatore</p>
+          <p style="color:var(--muted);margin-top:12px">For project inquiries, please include budget range and timeline for a faster response.</p>
+        </div>
+
+        <div class="contact-right">
+          <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="_replyto" placeholder="Email address" required>
+            <input type="text" name="project" placeholder="Project type (e.g., Residence, Office)" >
+            <textarea name="message" placeholder="Project details & timeline" required></textarea>
+            <div style="text-align:right;margin-top:10px">
+              <button class="form-btn" type="submit">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">© <span id="year"></span> VasDhara Design Studio — Contact</footer>
+  </main>
+
+<script>
+  document.querySelectorAll('a').forEach(a=>{
+    const href=a.getAttribute('href');
+    if(href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:')){
+      a.addEventListener('click', e=>{
+        if(location.pathname.endsWith(href)) return;
+        e.preventDefault();
+        document.body.classList.add('page-exit-active');
+        setTimeout(()=> window.location = href,380);
+      });
+    }
+  });
+  document.getElementById('year').textContent=new Date().getFullYear();
+  window.addEventListener('scroll', ()=> document.querySelector('.header').classList.toggle('scrolled', window.scrollY > 30));
+</script>
+</body>
+</html>

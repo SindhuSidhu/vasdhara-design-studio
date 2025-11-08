@@ -53,6 +53,21 @@
     document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
   });
 </script>
+<script>
+  // Smooth fade-out navigation
+  document.querySelectorAll("a").forEach(link => {
+    if (link.getAttribute("href") && !link.getAttribute("href").startsWith("#")) {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        document.body.classList.add("fade-out");
+        setTimeout(() => {
+          window.location = link.href;
+        }, 400);
+      });
+    }
+  });
+</script>
+
 
 </body>
 </html>

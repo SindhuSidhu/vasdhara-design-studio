@@ -1,45 +1,67 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>VasDhara Design Studio — Luxury Studio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VasDhara Luxury Design Studio</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="page-enter page-enter-active">
-
-  <header class="header">
-    <div class="brand">
-      <div class="brand-left">
-        <img src="assets/logo.png" alt="VasDhara logo">
-      </div>
-      <div class="brand-text">
-        <h1>VasDhara Design Studio</h1>
-      </div>
-    </div>
-
-    <nav class="nav">
-      <a href="index.html">Home</a>
+<body>
+  <header class="navbar">
+    <img src="assets/logo.png" alt="VasDhara Logo" class="logo">
+    <nav>
+      <a href="index.html" class="active">Home</a>
       <a href="modern.html">Modern</a>
       <a href="traditional.html">Traditional</a>
-      <a href="contact.html" class="cta-small">Contact</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="bg" style="background-image:url('assets/hero-lux1.jpg');"></div>
-      <div class="overlay hero-overlay">
-        <div class="left">
-          <h2>Architecture & Interiors — <span style="color:var(--gold)">Curated Luxury</span></h2>
-          <p class="lead">We design high-end residences and refined commercial spaces, blending cultural craft with contemporary excellence.</p>
-          <div class="hero-actions">
-            <a href="modern.html" class="primary-btn">Explore Modern</a>
-            <a href="traditional.html" class="ghost-btn">Explore Traditional</a>
-          </div>
+  <section class="hero" style="background-image: url('assets/hero-lux1.jpg');">
+    <div class="overlay">
+      <div class="hero-content">
+        <h1>VasDhara Luxury Studio</h1>
+        <p>Where architecture meets artistry — curating modern and traditional masterpieces for elite living.</p>
+        <div class="hero-buttons">
+          <a href="modern.html" class="primary-btn">Explore Modern</a>
+          <a href="traditional.html" class="primary-btn">Explore Traditional</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <div class="choices" style="margin-top:28px;">
-            <div class="card" onclick="location.href='modern.html'">
-              <img src="assets/modern-thumb.jpg" alt="modern">
-              <h
+  <section class="intro-section">
+    <h2>Designs Crafted for Distinction</h2>
+    <p class="tagline">Luxury | Precision | Innovation</p>
+    <div class="gallery">
+      <img src="assets/project1.jpg" alt="Project 1">
+      <img src="assets/project2.jpg" alt="Project 2">
+      <img src="assets/project3.jpg" alt="Project 3">
+    </div>
+  </section>
+
+  <section class="choices">
+    <div class="choice-card">
+      <img src="assets/modern-thumb.jpg" alt="Modern Design">
+      <div class="choice-overlay">
+        <h3>Modern Elegance</h3>
+        <p>Minimalistic forms and clean lines with functional luxury.</p>
+        <a href="modern.html" class="primary-btn">View Modern</a>
+      </div>
+    </div>
+
+    <div class="choice-card">
+      <img src="assets/traditional-thumb.jpg" alt="Traditional Design">
+      <div class="choice-overlay">
+        <h3>Traditional Grandeur</h3>
+        <p>Rooted in culture, redefined with sophistication.</p>
+        <a href="traditional.html" class="primary-btn">View Traditional</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 VasDhara Luxury Studio | East Street, Coimbatore | ✉ vasdharadesignstudio@gmail.com | 📞 9876543210</p>
+  </footer>
+</body>
+</html>

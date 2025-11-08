@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | VasDhara Design Studio</title>
+  <title>Contact | VasDhara Design Studio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header class="navbar fade-in">
+  <header class="navbar transparent fade-in">
     <img src="assets/logo.png" alt="VasDhara Logo" class="logo" />
     <nav>
       <a href="index.html">Home</a>
@@ -18,26 +18,35 @@
     </nav>
   </header>
 
-  <section class="section fade-in">
-    <h3>Get In Touch</h3>
-    <p>Email: <strong>vasdharadesignstudio@gmail.com</strong></p>
-    <p>Phone: <strong>+91 9585281602</strong></p>
-    <p>Address: <strong>East Street, Coimbatore</strong></p>
+  <section class="hero fade-in" style="background-image: url('assets/hero-lux1.jpg');">
+    <div class="hero-content">
+      <h1>Contact Us</h1>
+      <p>Let's bring your vision to life — modern or traditional, we’re here to create your dream space.</p>
+    </div>
+  </section>
 
-    <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
+  <section class="section fade-in">
+    <h3>Get in Touch</h3>
+    <form action="https://formspree.io/f/mkgnzxxr" method="POST" class="contact-form">
       <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Tell us about your project..." required></textarea>
+      <input type="email" name="_replyto" placeholder="Your Email" required />
+      <input type="text" name="subject" placeholder="Project Type (e.g. Residence, Office)" required />
+      <textarea name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
       <button type="submit" class="primary-btn">Send Message</button>
     </form>
+
+    <div class="contact-details fade-in">
+      <p><strong>📍 Address:</strong> East Street, Coimbatore</p>
+      <p><strong>📞 Phone:</strong> +91 9585181602</p>
+      <p><strong>📧 Email:</strong> vasdharadesignstudio@gmail.com</p>
+    </div>
   </section>
 
   <footer class="fade-in">
     <p>© 2025 VasDhara Design Studio | Coimbatore</p>
   </footer>
 
-  <a href="https://wa.me/919585281602" class="whatsapp-float" target="_blank">💬</a>
-
+  <a href="https://wa.me/919585281602" class="whatsapp-float" target="_blank" title="Get Consultation">💬</a>
   <script src="script.js"></script>
 </body>
 </html>
